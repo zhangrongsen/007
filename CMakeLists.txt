@@ -1,11 +1,20 @@
-﻿cmake_minimum_required(VERSION 3.10)
-project(ArmorDetector)
+﻿cmake_minimum_required(VERSION 3.16)
+project(outpost_estimation)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-set(OpenCV_DIR "E:/opencv4.5.2/opencv/build/x64/vc15/lib")
+# OpenCV
 find_package(OpenCV REQUIRED)
-include_directories(${OpenCV_INCLUDE_DIRS})
+# Eigen
+find_package(Eigen3 REQUIRED)
 
-add_executable(detector main.cpp)
-target_link_libraries(detector ${OpenCV_LIBS})
+include_directories(
+    ${OpenCV_INCLUDE_DIRS}
+    ${EIGEN3_INCLUDE_DIR}
+)
+
+add_executable(outpost
+    main.cpp
+    filter.cpp
+)
+target_link_libraries(outpost ${OpenCV_LIBS})
