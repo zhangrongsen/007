@@ -1,0 +1,3 @@
+D:/opencv007/build/CMakeFiles/detector.dir
+D:/opencv007/build/CMakeFiles/ALL_BUILD.dir
+D:/opencv007/build/CMakeFiles/ZERO_CHECK.dir
